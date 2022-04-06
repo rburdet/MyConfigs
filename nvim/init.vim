@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'tpope/vim-sleuth'
   Plug 'mhinz/vim-startify'
+  Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " ctrl p
