@@ -146,6 +146,10 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Map cocsearch
+" Search file/string
+nnoremap <leader>t :GFiles<CR>
+nnoremap <leader>f :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')

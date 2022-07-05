@@ -63,6 +63,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sleuth'
   Plug 'mhinz/vim-startify'
   Plug 'kien/ctrlp.vim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " ctrl p
@@ -89,6 +91,12 @@ autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 syntax on
 colorscheme onedark
 
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " ============== EXTERNALS ==============
 source ~/.config/nvim/coc.vim
