@@ -65,6 +65,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'neoclide/vim-jsx-improve'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " ctrl p
