@@ -67,7 +67,27 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'neoclide/vim-jsx-improve'
   Plug 'tpope/vim-fugitive'
+  Plug 'ThePrimeagen/vim-be-good'
+  Plug 'airblade/vim-rooter'
+  Plug 'mrjones2014/smart-splits.nvim', { 'do': './kitty/install-kittens.bash'} 
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'stevearc/dressing.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'MeanderingProgrammer/render-markdown.nvim'
+  Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'nvim-neotest/nvim-nio'
+  Plug 'rcarriga/nvim-dap-ui'
+  Plug 'leoluz/nvim-dap-go'
+  Plug 'theHamsta/nvim-dap-virtual-text'
+  Plug 'mxsdev/nvim-dap-vscode-js'
 call plug#end()
+" Avante setup
+
+
+
+
 
 " ctrl p
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -100,5 +120,28 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" go debugger
+let g:go_debug_mappings = {
+      \ '(go-debug-continue)': {'key': 'c', 'arguments': '<nowait>'},
+      \ '(go-debug-next)': {'key': 'n', 'arguments': '<nowait>'},
+      \ '(go-debug-step)': {'key': 's'},
+      \ '(go-debug-print)': {'key': 'p'},
+  \}
+
+map <leader>ds :GoDebugStart<cr>
+map <leader>dt :GoDebugStop<cr>
+map <leader>db :GoDebugBreakpoint<cr>
+
+
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 50vnew',
+      \ 'stack':      'rightbelow 10new',
+      \ }
+      " \ 'goroutines':      'rightbelow 10new',
+
+
 " ============== EXTERNALS ==============
 source ~/.config/nvim/coc.vim
+lua require('init')
+lua require('myconfig')
+
